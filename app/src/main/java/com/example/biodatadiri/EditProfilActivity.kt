@@ -11,7 +11,7 @@ class EditProfilActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         editBinding = ActivityEditProfilBinding.inflate(layoutInflater)
         setContentView(editBinding.root)
-//menerima data yang dikirimkan dari ProfilActivity.kt
+//menerima data yang dikirimkan dari com.example.biodatadiri.ProfilActivity.kt
         val intentData = intent.extras
         val namaUser = intentData?.getString("nama")
 //set edittext dengan data yang dikirimkan tadi
@@ -21,7 +21,7 @@ class EditProfilActivity : AppCompatActivity() {
     }
     private fun saveData() {
         val namaEdit = editBinding.edtProfilName.text.toString()
-        if (!namaEdit.isEmpty()) {
+        if (namaEdit.isNotEmpty()) {
 //jika editText namaEdit tidak kosong, maka kirimkan value nya ke ProfilActivity, dan beri tanda RESULT_OK
             val result = Intent()
             result.putExtra("nama", namaEdit)

@@ -1,72 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         tools:context=".MainActivity">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Biodata Diri"
-        android:layout_gravity="center_horizontal"
-        android:layout_margin="16dp"
-        android:fontFamily="casual"
-        android:textSize="20sp"
-        android:textStyle="bold"/>
-
-    <EditText
-        android:id="@+id/edtName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Nama"
-        android:layout_margin="16dp"/>
-
-    <Spinner
-        android:id="@+id/spinnerGender"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:entries="@array/jenis_kelamin"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Biodata Diri"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="16dp"
+            android:fontFamily="casual"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
 
         <EditText
-        android:id="@+id/edtEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Email"
-        android:layout_margin="16dp"
-            tools:ignore="ExtraText" />
+            android:id="@+id/edtName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:hint="Nama"
+            android:minHeight="48dp"
+            android:textColorHint="#546E7A"
+            tools:ignore="VisualLintTextFieldSize" />
+
+        <Spinner
+            android:id="@+id/spinnerGender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:entries="@array/jenis_kelamin"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:id="@+id/edtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:hint="Email"
+            android:minHeight="48dp"
+            tools:ignore="VisualLintTextFieldSize" />
 
         <EditText
             android:id="@+id/edtTelp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Telp"
             android:layout_margin="16dp"
-            android:inputType="phone"/>
-
+            android:hint="Telp"
+            android:inputType="phone"
+            android:minHeight="48dp"
+            tools:ignore="VisualLintTextFieldSize" />
         <EditText
             android:id="@+id/edtAddress"
             android:layout_width="match_parent"
             android:layout_height="120dp"
             android:hint="Alamat"
             android:layout_margin="16dp"
-            android:inputType="textMultiLine"/>
-
+            android:inputType="textMultiLine"
+            tools:ignore="VisualLintTextFieldSize" />
         <Button
             android:id="@+id/btnSave"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="SIMPAN"
-            android:layout_margin="16dp"/>
-
+            android:layout_margin="16dp"
+            tools:ignore="VisualLintButtonSize" />
     </LinearLayout>
-
 </ScrollView>

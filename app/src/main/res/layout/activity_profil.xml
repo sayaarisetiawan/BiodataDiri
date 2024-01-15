@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -115,7 +113,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:textSize="18sp"
-                    android:text="085123123123"/>
+                    android:text="085746897475"/>
 
             </LinearLayout>
 
@@ -145,13 +143,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                android:text="EDIT NAMA"/>
+                android:text="EDIT NAMA"
+                tools:ignore="VisualLintButtonSize" />
+            <Button
+                android:id="@+id/btnEditAll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="EDIT ALL"
+                tools:ignore="VisualLintButtonSize" />
             <Button
                 android:id="@+id/btnCall"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                android:text="TELEPON"/>
+                android:text="TELEPON"
+                tools:ignore="VisualLintButtonSize" />
         </LinearLayout>
     </RelativeLayout>
 </ScrollView>
