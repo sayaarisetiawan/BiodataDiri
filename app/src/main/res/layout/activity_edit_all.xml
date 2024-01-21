@@ -44,7 +44,9 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:hint="Edit Telepon"
+        android:inputType="phone"
         android:minHeight="48dp"
+        android:textColorHint="#546E7A"
         tools:ignore="VisualLintTextFieldSize" />
 
     <EditText

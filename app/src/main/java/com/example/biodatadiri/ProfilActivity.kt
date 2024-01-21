@@ -46,14 +46,15 @@ class ProfilActivity : AppCompatActivity() {
     }
 
     companion object {
-        const val REQUEST_CODE = 100
+        const val REQUEST_CODE_EDIT_PROFIL = 100
+        const val REQUEST_CODE_EDIT_ALL = 101
     }
 
     private fun navigasiKeEditProfil() {
         val intent = Intent(this, EditProfilActivity::class.java)
         val namaUser = profilBinding.txtName.text.toString()
         intent.putExtra("nama", namaUser)
-        startActivityForResult(intent, REQUEST_CODE)
+        startActivityForResult(intent, REQUEST_CODE_EDIT_PROFIL)
     }
 
 
@@ -69,7 +70,7 @@ class ProfilActivity : AppCompatActivity() {
         intent.putExtra("e-mail", mail)
         intent.putExtra("nomor telepon", noTelp)
         intent.putExtra("alamat", alamat)
-        startActivityForResult(intent, REQUEST_CODE)
+        startActivityForResult(intent, REQUEST_CODE_EDIT_ALL)
     }
 
     @SuppressLint("QueryPermissionsNeeded")
@@ -85,13 +86,33 @@ class ProfilActivity : AppCompatActivity() {
     @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == REQUEST_CODE) {
+        when (requestCode) {
+            REQUEST_CODE_EDIT_PROFIL -> {
             if (resultCode == Activity.RESULT_OK) {
                 val result = data?.getStringExtra("nama")
                 profilBinding.txtName.text = result
             } else {
-                Toast.makeText(this, "Edit failed", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Edit Name failed", Toast.LENGTH_SHORT).show()
             }
+        }
+        REQUEST_CODE_EDIT_ALL -> {
+            if (resultCode == Activity.RESULT_OK) {
+                val resultNama = data?.getStringExtra("nama")
+                val resultJenisKelamin = data?.getStringExtra("jenis kelamin")
+                val resultEmail = data?.getStringExtra("e-mail")
+                val resultTelp = data?.getStringExtra("nomor telepon")
+                val resultAlamat = data?.getStringExtra("alamat")
+                profilBinding.txtName.text = resultNama
+                profilBinding.txtGender.text = resultJenisKelamin
+                profilBinding.txtEmail.text = resultEmail
+                profilBinding.txtTelp.text = resultTelp
+                profilBinding.txtAddress.text = resultAlamat
+
+            } else {
+                Toast.makeText(this, "Edit All failed", Toast.LENGTH_SHORT).show()
+            }
+        }
+
         }
     }
 
